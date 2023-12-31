@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads</title>
+    <!-- Thêm thẻ link để favicon -->
+    <link rel="icon" href="./public/image/adwords.png" type="image/x-icon">
+    <!--   css  -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Liên kết đến tệp CSS của Slick Carousel qua CDN -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid justify-content-start">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav-item mx-3">
+                <a class="navbar-brand active" aria-current="page" href="#">
+                    <svg viewBox="0 0 74 24" aria-hidden="true" role="presentation"
+                        class="glue-icon glue-header__logo-svg" style="width: 80px; height: 30px;">
+                        <path fill="#4285F4"
+                            d="M9.24 8.19v2.46h5.88c-.18 1.38-.64 2.39-1.34 3.1-.86.86-2.2 1.8-4.54 1.8-3.62 0-6.45-2.92-6.45-6.54s2.83-6.54 6.45-6.54c1.95 0 3.38.77 4.43 1.76L15.4 2.5C13.94 1.08 11.98 0 9.24 0 4.28 0 .11 4.04.11 9s4.17 9 9.13 9c2.68 0 4.7-.88 6.28-2.52 1.62-1.62 2.13-3.91 2.13-5.75 0-.57-.04-1.1-.13-1.54H9.24z">
+                        </path>
+                        <path fill="#EA4335"
+                            d="M25 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z">
+                        </path>
+                        <path fill="#4285F4"
+                            d="M53.58 7.49h-.09c-.57-.68-1.67-1.3-3.06-1.3C47.53 6.19 45 8.72 45 12c0 3.26 2.53 5.81 5.43 5.81 1.39 0 2.49-.62 3.06-1.32h.09v.81c0 2.22-1.19 3.41-3.1 3.41-1.56 0-2.53-1.12-2.93-2.07l-2.22.92c.64 1.54 2.33 3.43 5.15 3.43 2.99 0 5.52-1.76 5.52-6.05V6.49h-2.42v1zm-2.93 8.03c-1.76 0-3.1-1.5-3.1-3.52 0-2.05 1.34-3.52 3.1-3.52 1.74 0 3.1 1.5 3.1 3.54.01 2.03-1.36 3.5-3.1 3.5z">
+                        </path>
+                        <path fill="#FBBC05"
+                            d="M38 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z">
+                        </path>
+                        <path fill="#34A853" d="M58 .24h2.51v17.57H58z"></path>
+                        <path fill="#EA4335"
+                            d="M68.26 15.52c-1.3 0-2.22-.59-2.82-1.76l7.77-3.21-.26-.66c-.48-1.3-1.96-3.7-4.97-3.7-2.99 0-5.48 2.35-5.48 5.81 0 3.26 2.46 5.81 5.76 5.81 2.66 0 4.2-1.63 4.84-2.57l-1.98-1.32c-.66.96-1.56 1.6-2.86 1.6zm-.18-7.15c1.03 0 1.91.53 2.2 1.28l-5.25 2.17c0-2.44 1.73-3.45 3.05-3.45z">
+                        </path>
+                    </svg>
+                    <span class="tittle_Googleads">Ads</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-lg-0">
+                    <li class="nav-item mr-lg-3 ">
+                        <a class="nav-link" href="#">Mục Tiêu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Chiến dịch và công cụ
+                        </a>
+                        <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul> -->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Đối tác
+                        </a>
+                        <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Chuyên gia hỗ trợ</a>
+                    </li>
+                </ul>
+                <form class="d-flex mx-lg-3">
+                    <button class="btn btn-outline-primary mx-3" type="submit">Đăng Nhập</button>
+                    <button class="btn btn-primary" type="submit">Bắt Đầu Ngay</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- </navbar> -->
+    <!-- body -->
+    <section class="gads-animated-hero">
+        <div class="container">
+            <div class="gads-animated-hero-item ">
+                <div class="justify-content-between">
+                    <div class="gads-container">
+                        <!-- item -->
+                        <div class="gads-circle-picture active animate__animated animate__fadeInDown"
+                            style="position: relative;">
+                            <div class="gads-picture-animated ms-auto" style="background-color: #79b0f9;">
+                            </div>
+                            <div class="gads-title-animated text-center ">
+                                <span class="pri_title" style="color: #1a73e8;">Tăng Doanh Số</span>
+                                <div class="picture-item">
+                                    <img src="https://lh3.googleusercontent.com/IodmMKZ9EvPIws5IENQSSNe1UZGRF0xOkZbRnNcY2quFWw7I5r1kr1kd51cVmK8a20eHp-f8PqAIH5euAuvoY_hjIVG1T--9r6W5kW4uq7qsuiWOddY=w190-rw-v1"
+                                        alt="Một ảnh động dạng lật minh họa các loại quảng cáo. Ví dụ về loại quảng cáo Mua sắm xuất hiện tại đây."
+                                        class=" " width="190" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- item -->
+                        <div class="gads-circle-picture animate__animated animate__fadeInDown">
+                            <div class="gads-picture-animated ms-auto" style="background-color: #f6aea9">
+                            </div>
+                            <div class="gads-title-animated text-center ">
+                                <span class="pri_title" style="color: #c5221f;">Hiển Thị Nổi Bật</span>
+                                <div class="picture-item">
+                                    <img src="https://lh3.googleusercontent.com/6PDhYjkfhtTkjBOtkkIXZdgfHuuc7qWCb79Lxwz1oRn01I4d-mQCs4fBnYQQpjPFt_UMeoNgFd916D6inaGfqj5NNtMsGZQBiGg17DLs60Zmiy1fCEk=s0-rw-v1"
+                                        alt="Một ảnh động dạng lật minh họa các loại quảng cáo. Ví dụ về loại quảng cáo Mua sắm xuất hiện tại đây."
+                                        class=" " width="190" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gads-circle-picture animate__animated animate__fadeInDown">
+                            <div class="gads-picture-animated ms-auto " style="background-color: #feefc3">
+                            </div>
+                            <div class="gads-title-animated text-center ">
+                                <div class="d-block">
+                                    <span class="pri_title my-0" style="color: #f29900;">Hiển thị tới </span> <br>
+                                    <span class="pri_title my-0" style="color: #f29900;">người dùng </span>
+                                </div>
+                                <div class="picture-item">
+                                    <img src="https://lh3.googleusercontent.com/-97fvgDFboo50I_oHmyo0F-kzhwnCkHjlULkLIzYYhBbqugAnZz1JY-vuTqIGBCxlrJcxAdqItEmxkMWahsuiJ8_ceO1HBICy3_v9JyA_IUes53jvQ8=s0-rw-v1"
+                                        alt="Một ảnh động dạng lật minh họa các loại quảng cáo. Ví dụ về loại quảng cáo Mua sắm xuất hiện tại đây."
+                                        class=" " width="190" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gads-circle-picture animate__animated animate__fadeInDown">
+                            <div class="gads-picture-animated ms-auto" style="background-color: #5bb974">
+                            </div>
+                            <div class="gads-title-animated text-center ">
+                                <span class="pri_title" style="color: #1e8e3e   ;">Xuất hiện</span>
+                                <div class="picture-item">
+                                    <img src="https://lh3.googleusercontent.com/dZxOkA1LCYoSD2AgWrvGk1cH41fdPBwIs7TBAr47qR9Y43qvAU6NAs1mInCTgFX5_S1iXb-iJNkZcpJvURAY7Yck_1gZLkpC3mha0jFR9vfnnb4CZQ=s0-rw-v1"
+                                        alt="Một ảnh động dạng lật minh họa các loại quảng cáo. Ví dụ về loại quảng cáo Mua sắm xuất hiện tại đây."
+                                        class=" " width="190" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-connect">
+                <div class="main-static ">
+                    <div class="static-headline-text d-flex mx-auto justify-content-center">
+                        <div class="pri_title">thông qua Google Ads</div>
+                        <span class="pause_action">
+                            <i class="fa-solid fa-circle-pause"></i>
+                        </span>
+                    </div>
+                    <div class="text-center">
+
+                        <div class="static-content text-center">
+                            <p>Là những yếu tố quan trọng nhất, hãy giúp khách hàng tiềm năng dễ dàng tìm thấy doanh
+                                nghiệp của bạn thông qua Google Ads.</p>
+                        </div>
+                        <form class="d-inline-flex mx-lg-3 mx-auto">
+                            <button class="btn btn-primary" type="submit">Bắt đầu ngay</button>
+                            <button class="btn btn-outline-primary mx-3" type="submit">Bắt đầu với chuyên gia</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hung -->
+    <section class="benefit-of-google my-5">
+        <h2 class="headline-2 fw-bold w-50">
+            Google Ads cung cấp cho bạn nhiều cách để tiếp cận người dùng
+        </h2>
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-12 col-lg-4 text-center">
+                    <ul class="list-button mt-lg-5">
+                        <li>
+                            <button class="btn btn-dark rounded-pill">
+                                <span class="icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" role="presentation"
+                                        class="glue-icon facet-icon icon-white">
+                                        <path
+                                            d="M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5A6.5 6.5 0 1 0 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="btn-text">Tìm kiếm</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-white rounded-pill">
+                                <span class="icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" role="presentation"
+                                        class="glue-icon facet-icon">
+                                        <path
+                                            d="M19.5 3h-14c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2Zm0 16h-14V5h14v14Zm-8-3.28 3-3.72 4 5h-12l3-4 2 2.72Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="btn-text">Hiển thị</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-white rounded-pill">
+                                <span class="icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" role="presentation"
+                                        class="glue-icon facet-icon">
+                                        <path
+                                            d="M18.997 2h-5.87c-.8 0-1.56.32-2.12.88l-8.13 8.13a3 3 0 0 0 0 4.24l5.87 5.87c.59.59 1.36.88 2.12.88s1.54-.29 2.12-.88l8.13-8.12c.56-.56.88-1.33.88-2.12V5c0-1.66-1.34-3-3-3Zm1 8.88c0 .27-.1.52-.29.71l-8.13 8.12a.96.96 0 0 1-.71.29c-.16 0-.45-.04-.71-.29l-5.87-5.87a1.017 1.017 0 0 1 0-1.42l8.13-8.13c.19-.19.45-.29.71-.29h5.87c.55 0 1 .45 1 1v5.88Z">
+                                        </path>
+                                        <path d="M16.497 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+                                    </svg>
+                                </span>
+                                <span class="btn-text">Mua sắm</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-white rounded-pill">
+                                <span class="icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" role="presentation"
+                                        class="glue-icon facet-icon">
+                                        <path
+                                            d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="btn-text">Video</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-white rounded-pill">
+                                <span class="icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" role="presentation"
+                                        class="glue-icon facet-icon">
+                                        <path
+                                            d="M2 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2Zm6 12c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2Zm-4-2c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2Zm-2-4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2Zm8-2c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2Zm2-6c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2Zm-2 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2Zm4 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2Zm2 4c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="btn-text">Ứng dụng</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div>
+                        <img src="public/image/anh1.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 function-content">
+                    <h3>Bắt đầu với tìm kiếm</h3>
+                    <p>Giúp tăng doanh số, lượng khách hàng tiềm năng hoặc lưu lượng truy cập trang web bằng cách giới
+                        thiệu doanh nghiệp của bạn cho những người chủ động tìm thông tin về các sản phẩm hoặc dịch vụ
+                        mà bạn cung cấp trên Google.</p>
+                    <div class="btn-redirec mt-lg-4">
+                        <button class="btn btn-primary rounded-circle me-2"><i
+                                class="fa-solid fa-arrow-right"></i></button>
+                        <a href="#" class="text-decoration-none">Khám phá quảng cáo Tìm kiếm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="effective-of-google">
+        <div class="text-center">
+            <h2 class="fw-bold headline-2">Đạt được tất cả mục tiêu
+                ở cùng một nơi</h2>
+            <button class="btn btn-white mt-4 text-primary mt-2 mb-5">Tìm hiểu thêm</button>
+        </div>
+        <div class="container">
+            <div class="row row-content justify-content-center align-items-center">
+                <div class="col-12 col-lg-3 mx-lg-3 my-lg-2 text-center">
+                    <img class="my-3" src="public/image/icon1.webp" alt="" width="30%">
+                    <h5>Tối đa hoá lượng khách hàng tiềm năng và số lượt chuyển đổi</h5>
+                    <p>Thu hút khách hàng tiềm năng có chất lượng cao hơn và tăng số lượt chuyển đổi.</p>
+                </div>
+                <div class="col-12 col-lg-3 mx-lg-3 my-lg-2 text-center">
+                    <img class="my-3" src="public/image/icon2.webp" alt="" width="30%">
+                    <h5>Tăng doanh số trực tuyến</h5>
+                    <p>Hiển thị nơi khách hàng đang tìm mua sản phẩm, đồng thời tăng lưu lượng truy cập vào trang web và
+                        doanh số bán hàng.</p>
+                </div>
+                <div class="col-12 col-lg-3 mx-lg-3 my-lg-2 text-center">
+                    <img class="my-3" src="public/image/icon3.webp" alt="" width="30%">
+                    <h5>Thúc đẩy người dùng ghé thăm cửa hàng thực tế</h5>
+                    <p>Thu hút người dùng ghé thăm cửa hàng thực tế và tăng doanh số bán hàng ngoại tuyến.</p>
+                </div>
+                <div class="col-12 col-lg-3 mx-lg-3 my-lg-2 text-center">
+                    <img class="my-3" src="public/image/icon4.webp" alt="" width="30%">
+                    <h5>Giới thiệu thương hiệu của bạn tới nhiều người hơn</h5>
+                    <p>Giới thiệu thương hiệu của bạn để tăng phạm vi tiếp cận và mức độ tương tác.</p>
+                </div>
+                <div class="col-12 col-lg-3 mx-lg-3 my-lg-2 text-center">
+                    <img class="my-3" src="public/image/icon5.webp" alt="" width="30%">
+                    <h5>Quảng cáo ứng dụng của bạn cho người dùng mới</h5>
+                    <p>Giới thiệu ứng dụng của bạn tới người dùng phù hợp để tăng số lượt tải xuống và mức độ tương tác.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="power-of-google">
+        <div class="text-center">
+            <h2 class="fw-bold headline-2">Sức mạnh của Google <br>
+                <span class="text-primary"> đối với công việc kinh doanh của bạn </span>
+            </h2>
+        </div>
+        <div class="container">
+            <div class="row row-content justify-content-center align-items-center">
+                <div class="col-12 col-lg-8 mx-lg-5">
+                    <div class="container">
+                        <div class="row my-lg-5">
+                            <div class="col-12 col-lg-4">
+                                <img src="public/image/power1.webp" alt="" width="100%">
+                            </div>
+                            <div class="col 12 col-lg-8">
+                                <h5>Tiếp cận khách hàng mọi lúc, mọi nơi</h5>
+                                <p>Xuất hiện đúng lúc và đúng vị trí trong hệ sinh thái Google Ads rộng lớn. Hãy để công
+                                    nghệ Trí tuệ nhân tạo của Google tìm ra các định dạng quảng cáo hoạt động hiệu quả
+                                    nhất trên YouTube, Khám phá, Tìm kiếm, v.v. để tối đa hoá lượt chuyển đổi.</p>
+                            </div>
+                        </div>
+
+                        <div class="row my-lg-5">
+                            <div class="col-12 col-lg-4">
+                                <img src="public/image/power2.webp" alt="" width="100%">
+                            </div>
+                            <div class="col 12 col-lg-8">
+                                <h5>Theo dõi, tìm hiểu và tối ưu hoá cho ROI</h5>
+                                <p>Theo dõi lượt chuyển đổi để thu thập thông tin chi tiết quý giá về đối tượng. Tính
+                                    năng tự động tối ưu hoá ngân sách của Google giúp bạn tiếp cận khách hàng mới với
+                                    mức ROI cao nhất.</p>
+                            </div>
+                        </div>
+
+                        <div class="row my-lg-5">
+                            <div class="col-12 col-lg-4">
+                                <img src="public/image/power3.webp" alt="" width="100%">
+                            </div>
+                            <div class="col 12 col-lg-8">
+                                <h5>Bạn sẽ luôn nắm toàn quyền kiểm soát ngân sách của mình</h5>
+                                <p>Nhận đề xuất, quyết định ngân sách hằng tháng và điều chỉnh bất cứ lúc nào. Công nghệ
+                                    của Google giúp bạn đo lường kết quả và tận dụng tối đa mức chi tiêu quảng cáo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="howto_success">
+        <div class="container">
+            <h1 class="success_title text-center py-5 fw-bold">
+                Thế nào là thành công?
+            </h1>
+            <div class="howto_success-main">
+                <div class="success-item slick-slider">
+                    <div class="row">
+
+                        <div class="success-item_image col-12 col-lg-6">
+                            <img src="./public/image/unnamed (4).webp" alt="" srcset="">
+                        </div>
+                        <div class="info-container no-logo col-12 col-lg-6 text-center px-5">
+                            <div class="glue-spacer-5-top text-primary">
+                                <div class="callout-container callout-mobile callout-blue callout-left">
+                                    <div class="callout-header">
+                                        <span class="callout-headline glue-font-weight-medium">-20%</span>
+                                    </div>
+                                    <div><span>Cost per install</span></div>
+                                </div>
+                            </div>
+                            <div class="content-container">
+                                <h3 class="glue-headline glue-headline--headline-4">
+                                    <span class="glue-font-weight-medium">
+                                        “Từ các chiến dịch ứng dụng, dễ dàng mở
+                                        rộng quy mô toàn cầu”
+                                    </span>
+                                </h3>
+                                <p class="case-study-body my-4">
+                                    Chau Pham, User Acquisition Lead, Amanotes
+                                </p>
+                            </div>
+                            <div class="icon-container">
+                                <div class="text-primary">
+                                    <div class="icon-youtube btn btn-primary rounded-circle my-2">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </div>
+                                    <br>
+                                    Xem câu chuyện của họ
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="success-item slick-slider">
+                    <div class="row">
+
+                        <div class="success-item_image col-12 col-lg-6">
+                            <img src="./public/image/unnamed (5).webp" alt="" srcset="">
+                        </div>
+                        <div class="info-container no-logo col-12 col-lg-6 text-center px-5">
+                            <div class="glue-spacer-5-top text-primary">
+                                <div class="callout-container callout-mobile callout-blue callout-left">
+                                    <div class="callout-header">
+                                        <span class="callout-headline glue-font-weight-medium">-20%</span>
+                                    </div>
+                                    <div><span>Cost per lead giảm</span></div>
+                                </div>
+                            </div>
+                            <div class="content-container">
+                                <h3 class="glue-headline glue-headline--headline-4">
+                                    <span class="glue-font-weight-medium">
+                                        “PMax giúp tiết kiệm thời gian trong
+                                        việc tối ưu hóa thủ công”
+                                    </span>
+                                </h3>
+                                <p class="case-study-body my-4">
+                                    Nam Nguyen, CEO & Co-founder, Goga
+                                </p>
+                            </div>
+                            <div class="icon-container">
+                                <div class="text-primary">
+                                    <div class="icon-youtube btn btn-primary rounded-circle my-2">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </div>
+                                    <br>
+                                    Xem câu chuyện của họ
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <body> -->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <!-- Section: Social media -->
+        <section class="justify-content-start p-4 border-bottom">
+            <div class="container d-flex ">
+                <!-- Left -->
+                <div class="mx-3 d-none d-lg-block">
+                    <span class="fw-bold">Theo dỗi chúng tôi</span>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div class="social-icons">
+                    <a href="#" class=" text-reset facebook-bg">
+                        <i class="fa-brands fa-facebook ms-2"></i>
+                    </a>
+                    <a href="#" class="ms-4 text-reset youtube-bg">
+                        <i class="fa-brands fa-youtube ms-2"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </div>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="footer-intro">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 ms-3 me-auto mb-4">
+                        <!-- Content -->
+                        <h6 class=" fw-bold mb-4">
+                            Giới thiệu về Google Ads
+                        </h6>
+                        <p><a href="#" class=" text-reset">Tổng quan</a></p>
+                        <p><a href="#" class=" text-reset">Mục tiêu</a></p>
+                        <p><a href="#" class=" text-reset">Chuyên gia hỗ trợ</a></p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2  mb-4">
+                        <!-- Links -->
+                        <h6 class=" fw-bold mb-4">
+                            Tìm hiểu và hỗ trợ
+                        </h6>
+                        <p>
+                            <a href="#!" class=" text-reset">Hướng dẫn sử dụng Google Ads</a>
+                        </p>
+                        <p>
+                            <a href="#!" class=" text-reset">Trung tâm trợ giúp Google Ads</a>
+                        </p>
+                        <p>
+                            <a href="#!" class=" text-reset">Cộng đồng Google Ads</a>
+                        </p>
+                        <p>
+                            <a href="#!" class=" text-reset">Skillshop</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2  mb-4">
+                        <!-- Links -->
+                        <h6 class=" fw-bold mb-4">
+                            Nhà phát triển và đối tác
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Trang web Google Developers</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">API Google Ads</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Tập lệnh Google Ads</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Thẻ tiếp thị lại của Google Ads</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2   mb-4">
+                        <!-- Links -->
+                        <h6 class=" fw-bold mb-4">Sản phẩm có liên quan</h6>
+                        <p>
+                            <a href="#!" class="text-reset">Chiến dịch mua sắm</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Trang doanh nghiệp</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Chrome</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 me-5 ms-auto   mb-4">
+                        <!-- Links -->
+                        <h6 class=" fw-bold mb-4">Các giải pháp khác</h6>
+                        <p>
+                            <a href="#!" class="text-reset">Giải pháp Doanh nghiệp</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Google Workspace</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Suy nghĩ với Google</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">AdSense</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">AdMob</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <section class="justify-content-start p-4 border-bottom">
+            <div class="container d-flex ">
+                <!-- Left -->
+                <div class="mx-3 d-none d-lg-block">
+                    <h5 style="margin-top: 5px;">Google</h5>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div class="menu-item " style="margin: 0 auto; display: flex;">
+                    <a href="#" class="fs-6 nav-link text-reset ">
+                        Bảo mật
+                    </a>
+                    <a href="#" class="fs-6 nav-link text-reset ">
+                        Điều khoản
+                    </a>
+                    <a href="#" class="fs-6 nav-link text-reset ">
+                        Về Google
+                    </a>
+                    <a href="#" class="fs-6 nav-link text-reset ">
+                        Các sản phẩm của Google
+                    </a>
+                </div>
+                <!-- Right -->
+
+                <div class="menu-item " style="margin: 0 auto; display: flex;">
+                    <a href="#" class="fs-6 px-0 nav-link text-reset ">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </a>
+                    <a href="#" class="fs-6 px-3 nav-link text-reset ">
+                        Trợ Giúp
+                    </a>
+                    <a href="#" class="fs-6 px-0 nav-link text-reset ">
+                        Việt Nam - Tiếng Việt
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        <!-- Copyright -->
+    </footer>
+    <!-- <footer> -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./public/js/js.js"></script>
+</body>
+
+</html>

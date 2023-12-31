@@ -1,0 +1,238 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --footer-color: #f8f9fa;
+    --glue-blue-100: #d2e3fc
+}
+/* header */
+.navitem-active{
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+}
+
+/* body */
+
+.gads-animated-hero{
+    margin: 100px 0;
+    /* position: relative; */
+}
+.gads-animated-hero-item .pri_title{
+    width: 709px;
+    display: flex;
+    /* font-family: Google Sans Display, Arial, Helvetica, sans-serif; */
+}
+.pri_title{
+    font-weight: 700;
+    font-size: 100px;
+    text-align: center;
+    
+    align-items: center;
+}
+.gads-circle-picture{
+    position: relative;
+}
+.gads-circle-picture .gads-title-animated{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translate(50%, -50%);
+    /* justify-content: space-evenly; */
+}
+.gads-circle-picture .gads-title-animated .picture-item{
+    padding-left: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+/* .gads-title-animated .picture-item{
+    margin-left: 20px;
+} */
+.gads-circle-picture .gads-picture-animated{
+    width: 360px;
+    border-radius: 50%;
+    height: 360px;
+    /* background-color: #79b0f9; */
+
+}
+.gads-circle-picture {
+    display: none;
+}
+
+.gads-circle-picture.active {
+    display: block;
+}
+
+.main-connect{
+    /* margin-bottom: 100px;
+    padding-top: 30px;  */
+}
+
+.main-connect .static-headline-text .pause_action{
+    cursor: pointer;
+    font-size: 25px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.howto_success{
+    background-color: var(--glue-blue-100);
+    padding-bottom: 100px;
+}
+
+.success-item {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 0 100px;
+    /* padding: 100px 0; */
+    /* border: 1px solid black; */
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.success-item .info-container{
+    margin: auto;
+}
+.success-item .glue-spacer-5-top{
+    position: absolute;
+    /* margin: 20px 100px; */
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: white;
+    left: 2%;
+    transform: translateY(300%);
+}
+.success-item .glue-font-weight-medium{
+    font-size: 30px;
+}
+
+.headline-2{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.list-button{
+    list-style: none;
+}
+
+.list-button button{
+    height: 50px;
+    width: 50%;
+    border: 2px #e8eaed solid;
+}
+
+.list-button button:hover{
+    background-color: #e8eaed;
+}
+
+.list-button li{
+    margin-bottom: 15px;
+}
+
+.icon{
+    vertical-align: middle;
+}
+
+.icon-white{
+    fill: white;
+}
+.btn-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.glue-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.function-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.function-content button{
+    width: 55px;
+    height: 55px;
+}
+
+.function-content button:hover{
+    background-color: #8ab4f8;
+    border-color: #8ab4f8;
+}
+
+.curve-divider {
+    height: 150px; /* Chiều cao của đường cong */
+    width: 100%; /* Chiều rộng của đường cong */
+    background-color: #1a73e8; /* Màu nền của đường cong */
+    clip-path: ellipse(100% 50% at 0% 50%); /* Tạo hình dạng đường cong */
+}
+
+.effective-of-google{
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+.effective-of-google h2{
+    width: 30%;
+}
+
+.effective-of-google button{
+    border: 1px #c4cad0 solid;
+    padding: 10px 20px;
+}
+
+.effective-of-google button:hover{
+    border: 1px #427cc4 solid;
+}
+
+.row-content{
+    display: flex;
+}
+/* Footer */
+
+.facebook-bg {
+    background-color: var(--text-color); /* Màu của Facebook */
+    border-radius: 2px;
+}
+
+.youtube-bg {
+    background-color:var(--text-color); /* Màu của YouTube */
+    border-radius: 2px;
+}
+
+footer{
+    background-color: var(--footer-color);
+}
+.footer-intro a{
+    text-decoration: none;
+}
+footer a:hover{
+    color: black;
+}
+@media (max-width: 567px) {
+    .menu-item{
+        display: block!important;
+    }
+}
+/* Footer */
